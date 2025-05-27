@@ -1,0 +1,29 @@
+<!DOCTYPE html>  <!-- base.html-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Biblioteca{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        .navbar { background-color: #333; padding: 10px; text-align: center; }
+        .navbar a { color: white; padding: 10px 20px; text-decoration: none; }
+        .navbar a:hover { background-color: #575757; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 5px; box-shadow: 0px 0px 10px gray; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'menu' %}">Inicio</a>
+        <a href="{% url 'listar_libros' %}">Libros Disponibles</a>
+        <a href="{% url 'registrar_libro' %}">Ingresar Libro</a>
+        <a href="{% url 'registrar_usuario' %}">Registrar Usuario</a>
+        <a href="{% url 'listar_prestamos' %}">Préstamos Activos</a>
+    </div>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html> <!--listar_prestamos.html-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Préstamos</title>
+</head>
+<body>
+    <h2>Lista de Préstamos</h2>
+    <table border="1">
+        <tr>
+            <th>Usuario</th>
+            <th>Libro</th>
+            <th>Fecha de Préstamo</th>
+            <th>Fecha de Devolución</th>
+            <th>Acciones</th>
+        </tr>
+        {% for prestamo in prestamos %}
+        <tr>
+            <td>{{ prestamo.usuario.nombre }}</td>
+            <td>{{ prestamo.libro.titulo }}</td>
+            <td>{{ prestamo.fecha_prestamo }}</td>
+            <td>{{ prestamo.fecha_devolucion }}</td>
+            <td>
+                <form action="{% url 'devolver_libro' prestamo.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Devolver</button>
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No hay préstamos registrados</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Realizar un Nuevo Préstamo</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="usuario">Seleccionar Usuario:</label>
+        <select name="usuario" required>
+            {% for usuario in usuarios %}
+            <option value="{{ usuario.id }}">{{ usuario.nombre }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="libro">Seleccionar Libro:</label>
+        <select name="libro" required>
+            {% for libro in libros %}
+            <option value="{{ libro.id }}">{{ libro.titulo }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Registrar Préstamo</button>
+    </form>
+
+    <br>
+    <a href="{% url 'menu' %}">Volver al Menú</a>
+</body>
+</html>

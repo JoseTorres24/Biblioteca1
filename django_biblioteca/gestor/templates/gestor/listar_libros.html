@@ -1,0 +1,40 @@
+<!DOCTYPE html> <!--listar_libros.html-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Libros</title>
+</head>
+<body>
+    <h2>Lista de Libros</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Género</th>
+                <th>Año de Publicación</th>
+                <th>Disponible</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for libro in libros %}
+            <tr>
+                <td>{{ libro.titulo }}</td>
+                <td>{{ libro.autor }}</td>
+                <td>{{ libro.genero }}</td>
+                <td>{{ libro.año_publicacion }}</td>
+                <td>{% if libro.disponible %}✅ Sí{% else %}❌ No{% endif %}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No hay libros disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="{% url 'menu' %}">Regresar al menu</a>
+</body>
+</html>

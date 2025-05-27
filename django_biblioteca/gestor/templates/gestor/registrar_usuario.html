@@ -1,0 +1,31 @@
+<!--registrar_usuario.html-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
+</head>
+<body>
+    <h2>Registrar Usuario</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <br>
+
+        <label for="numero_identificacion">Número de Identificación:</label>
+        <input type="text" name="numero_identificacion" required>
+        <br>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    <br>
+    <a href="{% url 'menu' %}">Volver al menu</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!--registrar_libro.html-->
+<html lang="es">
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Libro</title>
+</head>
+<body>
+    <h2>Registrar Nuevo Libro</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo" required><br>
+
+        <label for="autor">Autor:</label>
+        <input type="text" name="autor" required><br>
+
+        <label for="genero">Género:</label>
+        <input type="text" name="genero" required><br>
+
+        <label for="año_publicacion">Año de Publicación:</label>
+        <input type="number" name="año_publicacion" required><br>
+
+        <label for="disponible">Disponible:</label>
+        <input type="checkbox" name="disponible"><br>
+
+        <button type="submit">Guardar</button>
+    </body>
+</form>
+</html>
