@@ -11,23 +11,20 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i9-0=d=djt-%fw$_cvl9^vkb2thns3p^t1(j9e1awr-9o7co&&'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-i9-0=d=djt-%fw$_cvl9^vkb2thns3p^t1(j9e1awr-9o7co&&')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
 
 
 # Application definition
@@ -76,14 +73,15 @@ WSGI_APPLICATION = 'biblioteca.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'biblioteca1',  # Nombre de tu base de datos
-        'USER': 'root',         # Usuario de MySQL
-        'PASSWORD': '2405',  # Contraseña de MySQL
-        'HOST': 'localhost',    # Host de la base de datos
-        'PORT': '3306',         # Puerto de MySQL
+        'NAME': os.getenv('DATABASE_NAME', 'biblioteca1'),
+        'USER': os.getenv('DATABASE_USER', 'root'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', '2405'),
+        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
+        'PORT': os.getenv('DATABASE_PORT', '3306'),
     }
 }
 
