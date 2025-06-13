@@ -41,7 +41,7 @@ Adicionalmente, se integraron servicios como **Jenkins** para la automatización
 2. Recomendacion
    
    Principalmente este proyecto fue realizado dentro de una maquina virtual de Linux (Ubuntu), por recomendacion mia
-   realicen o prueben este proyecto con las dependencias anteriormente mostradas en en una maquina virtual de Linux.
+   realicen o prueben este proyecto con las dependencias anteriormente mostradas en una maquina virtual de Linux.
 
 # Licencia de Uso
 
