@@ -49,10 +49,7 @@ Este proyecto está disponible bajo los siguientes términos:
 
 1. **Uso Libre**: Puedes utilizar, copiar, modificar y distribuir el software libremente para fines personales, educativos o no comerciales.
 
-2. **Uso Comercial**: Si decides utilizar este software para fines de lucro o como parte de un proyecto comercial, **es obligatorio reconocer mi participación como autor original del software**. Además, se debe llegar a un acuerdo previo conmigo para determinar las condiciones de uso comercial.
-
-3. **Exclusión de Responsabilidad**: Este software se proporciona "tal cual", sin garantías de ningún tipo, ya sea expresas o implícitas. No me hago responsable de daños derivados del uso del software.
-
+2. **Exclusión de Responsabilidad**: Este software se proporciona "tal cual", sin garantías de ningún tipo, ya sea expresas o implícitas. No me hago responsable de daños derivados del uso del software.
 
 ---
 
